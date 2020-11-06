@@ -235,7 +235,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * it will return `The artist at index 0 is Amedeo Modigliani`
 */
 function getArtistByIndex(array, index) {
-  return `The artist at index ${index} is ${array[index].name}`;
+  return `The artist at index ${index} is ${array[index].name} `;
 }  
 
 console.log(artists[0]);
