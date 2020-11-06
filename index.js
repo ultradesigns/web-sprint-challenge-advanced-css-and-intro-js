@@ -249,7 +249,7 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(data){
  for(let i in data){
-   if(data[i].years.include('1900-2000')){
+   if(data[i].years.includes('1900-2000')){
      return data[i].name;
    }
 }
@@ -310,9 +310,15 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  for(let i in array){
+    if(array[i].paintings > 100){
+      return array[i].name;
+    }
+  }
 }
+
+console.log(lotsOfArt(artist));
 
 
 
