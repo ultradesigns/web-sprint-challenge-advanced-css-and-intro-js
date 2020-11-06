@@ -1,4 +1,4 @@
-export const artists = [
+    export const artists = [
     {
       "id": 0,
       "name": "Amedeo Modigliani",
@@ -81,7 +81,7 @@ export const artists = [
     },
     {
       "id": 8,
-      "name": "Vincent van Dough",
+      "name": "Vincent van Gogh",
       "years": "1853 - 1890",
       "genre": "Post-Impressionism",
       "nationality": "Dutch",
@@ -208,11 +208,20 @@ Practice accessing data above by console.log-ing following items:
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
+console.log(artists.name);
+console.log(artists[2].bio);
 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+// function editName(name){
+//   return 
+// }
+artists.splice(8,1,"Vincent Van Gogh");
+console.log(artists[8].name);
+
+
 
 
 
@@ -225,9 +234,11 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`
 */
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, index) {
+  return `The artist at index ${index} is ${array[index].name}`;
 }  
+
+console.log(artists[0]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() 
@@ -236,9 +247,16 @@ it returns an array with names of artists who were born in and died in 20th cent
 example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(data){
+ for(let i in data){
+   if(data[i].years.include('1900-2000')){
+     return data[i].name;
+   }
 }
+
+console.log(get20s(artists));
+
+
 
 
 
@@ -251,8 +269,9 @@ Create a function called `removeArtist` that takes two arguments:
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
-function removeArtist(/*Your Code Here*/) {
-   /*Your Code Here*/
+function removeArtist(data, number) {
+   delete data[number];
+   return data[number];
 }
    
 
@@ -271,9 +290,14 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
+function addArtist(array, id, name, years, genre, nationality, bio){
     /*Your Code Here*/
+    array.push({id, name, years, genre, nationality, bio});
+    return artists;
   }
+
+  addArtist(20,"lance", "1977-?", "renassance", "Hispanic","bla-bla-bla");
+
 
   
 
