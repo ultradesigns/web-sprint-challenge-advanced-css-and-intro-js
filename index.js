@@ -208,7 +208,7 @@ Practice accessing data above by console.log-ing following items:
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
-console.log(artists.name);
+console.log(artists[0].name);
 console.log(artists[2].bio);
 
 
@@ -248,8 +248,12 @@ example born in 1901 and died in 1959 - included / born in 1889 and died in 1925
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(data){
+let oldTimers[];
  for(let i in data){
-   if(data[i].years.includes('1900-2000')){
+   let param = split("1900 - 2000")
+   let first = para[0];
+   let last = para[1];
+   if(data[i].years >= 1900 && ){
      return data[i].name;
    }
 }
@@ -313,6 +317,7 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 function lotsOfArt(array){
   for(let i in array){
     if(array[i].paintings > 100){
+
       return array[i].name;
     }
   }
