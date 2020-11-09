@@ -1,4 +1,5 @@
-    export const artists = [
+    export
+     const artists = [
     {
       "id": 0,
       "name": "Amedeo Modigliani",
@@ -238,7 +239,7 @@ function getArtistByIndex(array, index) {
   return `The artist at index ${index} is ${array[index].name} `;
 }  
 
-console.log(artists[0]);
+// console.log(artists[0]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() 
@@ -248,17 +249,19 @@ example born in 1901 and died in 1959 - included / born in 1889 and died in 1925
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(data){
-let oldTimers[];
- for(let i in data){
-   let param = split("1900 - 2000")
-   let first = para[0];
-   let last = para[1];
-   if(data[i].years >= 1900 && ){
-     return data[i].name;
-   }
+let deceased = [];
+
+for(let i = 0; i < data.length; i++){
+  let date = data.years.split('-');
+  if(date[0]>= 1900 && date[1]<=2000){
+    //  deceased = artists.name[i];
+    deceased.push(data.name);
+  }
+  return deceased;
 }
 
 console.log(get20s(artists));
+
 
 
 
@@ -274,9 +277,11 @@ Create a function called `removeArtist` that takes two arguments:
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
 function removeArtist(data, number) {
-   delete data[number];
-   return data[number];
+   let person= data[number].name;
+   return person;
 }
+
+console.log(removeArtist(artists, 0))
    
 
 /**
@@ -373,12 +378,12 @@ function randomize(/* Code here */){
  
  
  
- /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
- function foo(){
-  console.log('its working');
-  return 'bar';
-}
-/*Don't touch the code after this line! */
+//  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
+//  function foo(){
+//   console.log('its working');
+//   return 'bar';
+// }
+// /*Don't touch the code after this line! */
 export default{
   foo,
   getArtistByIndex,
